@@ -1,18 +1,22 @@
 import urllib.request
 import json
-import numpy as np
 
-print("--- LIGO Gravitational Wave Data Downloader ---")
+print("--- LIGO Gravitational Wave Event Metadata Fetcher ---")
 
-event_url = "https://gwosc.org"
+event_url = "https://gwosc.org/api/v2/event-versions/GW150914-v3"
 
 try:
-    response = urllib.request.urlopen(event_url)
+    req = urllib.request.Request(
+        event_url, 
+        headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}
+    )
+    response = urllib.request.urlopen(req)
     data = json.loads(response.read().decode())
     
-    strain_file_url = data['events']['GW150914-v3']['strain']['url']
-    print(f"Successfully found LIGO data packet link:\n{strain_file_url}")
-    print("\nNext Step: Run data analysis via SciPy / NumPy arrays.")
+    print("Successfully connected to LIGO Open Science Center (GWOSC) API v2.")
+    print(f"Event: {data.get('name')} | Catalog: {data.get('catalog')}")
+    print(f"GPS Merger Time: {data.get('gps')} | Detectors: {', '.join(data.get('detectors', []))}")
+    print(f"Official DOI: {data.get('doi')}")
     
 except Exception as e:
-    print(f"Error accessing LIGO Open Science API: {e}")
+    print(f"API connection status: {e}")
