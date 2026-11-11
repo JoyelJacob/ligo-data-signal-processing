@@ -19,7 +19,5 @@ pip install numpy
 python ligo_analysis.py
 ```
 
-## Sample Execution Output
-```text
-[Paste your terminal output here after running in Codespaces]
-```
+## Execution Output
+Full terminal execution logs from all four signal-processing scripts are saved in [`results.txt`](./results.txt).
