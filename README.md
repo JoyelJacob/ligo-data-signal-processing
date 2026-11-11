@@ -21,3 +21,6 @@ python ligo_analysis.py
 
 ## Execution Output
 Full terminal execution logs from all four signal-processing scripts are saved in [`results.txt`](./results.txt).
+
+## Visual Diagnostics
+![LIGO Signal Processing Results](./ligo_dsp_results.png)

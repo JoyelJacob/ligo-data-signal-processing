@@ -17,3 +17,7 @@ Successfully extracted signal tracking pattern from simulated background white n
 --- Fast Fourier Transform (FFT) Frequency Analysis Engine ---
 Spectral analysis complete. Isolated structural noise peak at: 50.00 Hz
 Frequency domain mapping executed successfully.
+
+--- Visual Diagnostics & Quantitative Metrics ---
+Saved diagnostic plot: ligo_dsp_results.png
+Matched Filter Peak SNR: 3.30 | Detected Noise Spike: 50.00 Hz | Peak Chirp Strain: 9.80e-22
